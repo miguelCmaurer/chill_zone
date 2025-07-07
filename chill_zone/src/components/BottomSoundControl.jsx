@@ -8,7 +8,9 @@ import { useEffect, useState } from "react";
 
 async function fetchSongUrlAndLoad(song, audioRef, setIsPlaying, setTtl) {
   try {
-    const resp = await fetch(`http://localhost:8080/songs?song=${song}`);
+    const resp = await fetch(
+      `${import.meta.env.VITE_API_URL}/songs?song=${song}`,
+    );
     const data = await resp.json();
     audioRef.src = data.link;
     audioRef.load();
@@ -21,7 +23,9 @@ async function fetchSongUrlAndLoad(song, audioRef, setIsPlaying, setTtl) {
 }
 
 async function refreshSong(song, audioRef, setTtl, setSong) {
-  const resp = await fetch(`http://localhost:8080/songs?song=${song}`);
+  const resp = await fetch(
+    `${import.meta.env.VITE_API_URL}/songs?song=${song}`,
+  );
   const data = await resp.json();
   const audio = audioRef;
   const wasPlaying = !audio.paused;

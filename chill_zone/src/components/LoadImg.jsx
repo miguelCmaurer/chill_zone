@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 async function fetchImgFromServer(img, setSRC) {
-  const resp = await fetch(`http://localhost:8080/img?song=${img}`);
+  const resp = await fetch(`${import.meta.env.VITE_API_URL}/img?song=${img}`);
   const data = await resp.json();
   setSRC(data.link);
 }
