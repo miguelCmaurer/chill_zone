@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Shadows+Into+Light&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --font-shadows: "Shadows Into Light";
+    --font-default: "Inter";
+}
